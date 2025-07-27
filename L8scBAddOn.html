@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salsa Passion</title>
+    <title>Paraguay Turismo</title>
     <style>
         * {
             margin: 0;
@@ -18,6 +18,35 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            transition: all 0.3s ease;
+        }
+
+        /* Light Theme */
+        body.light-theme {
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        body.light-theme header {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        body.light-theme footer {
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+
+        }
+
+        body.light-theme .description {
+            color: #555;
+        }
+
+        body.light-theme .subtitle {
+            color: #777;
+        }
+
+        body.light-theme .theme-toggle {
+            background-color: #e0e0e0;
         }
         
         .container {
@@ -41,7 +70,7 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #ff6b6b;
+            color: #00b894;
         }
         
         .theme-indicator {
@@ -53,10 +82,10 @@
         }
         
         .theme-toggle {
-            width: 50px;
-            height: 26px;
+            width: 40px;
+            height: 20px;
             background-color: #333;
-            border-radius: 13px;
+            border-radius: 10px;
             position: relative;
             cursor: pointer;
         }
@@ -64,13 +93,19 @@
         .theme-toggle::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff6b6b;
+            width: 16px;
+            height: 16px;
+            background-color: #7dd3c0;
             border-radius: 50%;
-            top: 3px;
-            right: 3px;
+            top: 2px;
+            right: 2px;
             transition: all 0.3s ease;
+        }
+
+        /* Toggle animation when in light mode */
+        body.light-theme .theme-toggle::after {
+            transform: translateX(-20px);
+            background-color: #ffd93d;
         }
         
         /* Main Content Styles */
@@ -88,7 +123,7 @@
             font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
-            color: #ff6b6b;
+            color: #00b894;
         }
         
         .subtitle {
@@ -106,7 +141,7 @@
         }
         
         .wikipedia-link {
-            color: #ff6b6b;
+            color: #00b894;
             text-decoration: none;
             font-style: italic;
             margin-bottom: 30px;
@@ -114,7 +149,7 @@
         }
         
         .cta-button {
-            background-color: #ff6b6b;
+            background-color: #00b894;
             color: white;
             border: none;
             padding: 12px 30px;
@@ -126,9 +161,32 @@
         }
         
         .cta-button:hover {
-            background-color: #ff5252;
+            background-color: #00a085;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 184, 148, 0.3);
+        }
+        
+        /* Image Gallery Styles */
+        .image-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 30px 0;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .gallery-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
         }
         
         /* Footer */
@@ -141,7 +199,7 @@
         }
         
         .signature {
-            color: #ff6b6b;
+            color: #00b894;
         }
         
         /* Responsive */
@@ -165,40 +223,82 @@
             .description {
                 padding: 0 20px;
             }
+            
+            .image-gallery {
+                max-width: 350px;
+                gap: 20px;
+            }
+            
+            .gallery-image {
+                height: 300px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <div class="logo">SalsaPassion</div>
+            <div class="logo">Paraguay Turismo</div>
             <div class="theme-indicator">
-                Dark Theme
-                <div class="theme-toggle"></div>
+                <span id="theme-text">Dark Theme</span>
+                <div class="theme-toggle" id="theme-toggle"></div>
             </div>
         </header>
         
         <main class="main-content">
-            <h1 class="title">What is Salsa?</h1>
-            <p class="subtitle">My favorite type of dance</p>
+            <h1 class="title">¿Por qué visitar Paraguay?</h1>
+            <p class="subtitle">Descubre el corazón de Sudamérica</p>
             
             <p class="description">
-                Salsa is a Latin dance, associated with the music genre of the same name, 
-                which was first popularized in the United States in the 1960s in New York City. 
-                Salsa is a combination of Cuban dances, such as mambo, pachanga and rumba, 
-                as well as American dances such as swing and tap.
+                Paraguay es un país sin salida al mar ubicado en el corazón de Sudamérica, 
+                conocido por sus hermosos paisajes naturales, rica cultura guaraní y hospitalidad única. 
+                Desde las majestuosas Cataratas del Iguazú hasta las históricas Misiones Jesuíticas, 
+                Paraguay ofrece experiencias inolvidables para todos los viajeros.
             </p>
             
-            <a href="https://en.wikipedia.org/wiki/Salsa_(dance)" class="wikipedia-link">
-                - Read on Wikipedia
+            <div class="image-gallery">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/170/849/original/Asuncion-4.jpg?1752956344" alt="Asuncion" class="gallery-image">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/170/848/original/samber.jpg?1752956331" alt="Samber" class="gallery-image">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/170/847/original/itaipu.jpeg?1752956323" alt="Destino turístico Paraguay 3" class="gallery-image">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/170/819/original/encar.jpg?1752873539" alt="Destino turístico Paraguay 4" class="gallery-image">
+            </div>
+            
+            <a href="https://es.wikipedia.org/wiki/Turismo_en_Paraguay" class="wikipedia-link">
+                - Leer más en Wikipedia
             </a>
             
-            <button class="cta-button">Learn Salsa</button>
+            <button class="cta-button">Explorar Paraguay</button>
         </main>
         
         <footer>
-            <p>Coded with <span class="signature">💬 by Matt Delac</span></p>
+            <p>Coded with <span class="signature">🇵🇾 by Vania</span></p>
         </footer>
     </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeText = document.getElementById('theme-text');
+        const body = document.body;
+
+  
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        
+        if (currentTheme === 'light') {
+            body.classList.add('light-theme');
+            themeText.textContent = 'Light Theme';
+        }
+
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('light-theme');
+            
+            if (body.classList.contains('light-theme')) {
+                themeText.textContent = 'Light Theme';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeText.textContent = 'Dark Theme';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    </script>
 </body>
 </html>
