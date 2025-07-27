@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salsa Passion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #ff6b6b;
+        }
+        
+        .theme-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+        
+        .theme-toggle {
+            width: 50px;
+            height: 26px;
+            background-color: #333;
+            border-radius: 13px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff6b6b;
+            border-radius: 50%;
+            top: 3px;
+            right: 3px;
+            transition: all 0.3s ease;
+        }
+        
+        /* Main Content Styles */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ff6b6b;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 30px;
+            color: #bbb;
+        }
+        
+        .description {
+            max-width: 800px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            color: #ddd;
+        }
+        
+        .wikipedia-link {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-style: italic;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        
+        .cta-button {
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+        
+        .cta-button:hover {
+            background-color: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #333;
+        }
+        
+        .signature {
+            color: #ff6b6b;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.4rem;
+            }
+            
+            .theme-indicator {
+                font-size: 0.8rem;
+            }
+            
+            .title {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .description {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">SalsaPassion</div>
+            <div class="theme-indicator">
+                Dark Theme
+                <div class="theme-toggle"></div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <h1 class="title">What is Salsa?</h1>
+            <p class="subtitle">My favorite type of dance</p>
+            
+            <p class="description">
+                Salsa is a Latin dance, associated with the music genre of the same name, 
+                which was first popularized in the United States in the 1960s in New York City. 
+                Salsa is a combination of Cuban dances, such as mambo, pachanga and rumba, 
+                as well as American dances such as swing and tap.
+            </p>
+            
+            <a href="https://en.wikipedia.org/wiki/Salsa_(dance)" class="wikipedia-link">
+                - Read on Wikipedia
+            </a>
+            
+            <button class="cta-button">Learn Salsa</button>
+        </main>
+        
+        <footer>
+            <p>Coded with <span class="signature">💬 by Matt Delac</span></p>
+        </footer>
+    </div>
+</body>
+</html>
